@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explorgramming System</title>
+    <link rel="icon" type="image/png" href="kuliah2.png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background: linear-gradient(to bottom, #fdfdfd, #eaeaea); /* Gradient background */
+            overflow-x: hidden;
+            scroll-behavior: smooth; /* Smooth scrolling */
+        }
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            background: linear-gradient(to right, #ffffff, #f0f0f0); /* Subtle gradient */
+            padding: 10px 20px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .navbar:hover {
+            background: linear-gradient(to right, #f0f0f0, #eaeaea);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+        .navbar img {
+            height: 50px;
+            margin-right: 20px;
+            transition: transform 0.3s ease-in-out;
+        }
+        .navbar img:hover {
+            transform: scale(1.1) rotate(5deg);
+        }
+        .navbar div {
+            display: flex;
+            gap: 15px;
+        }
+        .navbar a {
+            color: #555;
+            text-decoration: none;
+            padding: 10px 20px;
+            font-weight: bold;
+            font-size: 1rem;
+            border-radius: 5px;
+            transition: background 0.3s, transform 0.3s, color 0.3s;
+        }
+        .navbar a:hover {
+            background: rgba(85, 85, 85, 0.1);
+            transform: scale(1.1);
+            color: #333;
+        }
+        .navbar a.active {
+            background: rgba(85, 85, 85, 0.2);
+        }
+        .content {
+            display: flex;
+            height: 100vh;
+            margin-top: 70px;
+            animation: fadeIn 1s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .content .left, .content .right {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .content .left {
+            background: linear-gradient(to bottom, #f0f0f0, #eaeaea);
+            position: relative;
+        }
+        .content .left img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out;
+        }
+        .content .left img:hover {
+            transform: scale(1.05);
+        }
+        .content .right {
+            background: #ffffff;
+            padding: 20px;
+            text-align: left;
+            font-size: 1.2rem;
+            line-height: 1.6;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            animation: slideIn 1s ease-in-out;
+        }
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        .content .right h2 {
+            margin-bottom: 20px;
+            font-size: 2rem;
+            color: #333;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+        .content .right ul {
+            list-style: none;
+            padding: 0;
+        }
+        .content .right ul li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 20px;
+        }
+        .content .right ul li::before {
+            content: ''; /* Default: no check symbol */
+        }
+        .content .right ul li:last-child::before {
+            content: '✔'; /* Add check symbol for the last list item */
+            color: #4caf50;
+            font-size: 1.2rem;
+            position: absolute;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center; margin-top: 100px; font-size: 2.5rem; color: #333;">Upcoming Event</h1>
+    <nav class="navbar">
+        <img src="kuliah2.png" alt="Logo" class="logo">
+        <div>
+            <a href="index.html">Home</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+    <div class="content">
+        <div class="left" style="position: relative;">
+            <div style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%); z-index: 10;">
+                <p style="font-size: 1rem; color: #fff; background: linear-gradient(135deg, #6a11cb, #2575fc); padding: 12px 18px; border-radius: 15px; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); position: relative; font-weight: bold;">
+                    Click the image to register
+                    <span style="position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); width: 0; height: 0; border-left: 10px solid transparent; border-right: 10px solid transparent; border-top: 10px solid #6a11cb;"></span>
+                </p>
+            </div>
+            <a href="https://forms.gle/hdQ16fwu1QtUCFLL9" target="_blank">
+                <img src="Picture/explorgrammingEvent.jpg" alt="Upcoming Event">
+            </a>
+        </div>
+        <div class="right">
+            <ul>
+                <li><strong>First Session:</strong></li>
+                <li><strong>Date:</strong> Wednesday, April 9, 2025</li>
+                <li><strong>Time:</strong> 2:00 PM - 5:00 PM</li>
+                <li><strong>Location:</strong> Faculty of Computer and Mathematical Sciences (FSKM)</li>
+                <li><strong>Second Session:</strong></li>
+                <li><strong>Date:</strong> Thursday, April 10, 2025</li>
+                <li><strong>Time:</strong> 11:00 AM - 1:30 PM</li>
+                <li><strong>Location:</strong> Faculty of Computer and Mathematical Sciences (FSKM)</li>
+                <li>All participants will receive a certificate of participation.</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

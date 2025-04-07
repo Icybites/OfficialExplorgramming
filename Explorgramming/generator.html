@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starting Checkpoint Generator</title>
+    <title>Starting Checkpoint Generator</title>
+    <link rel="icon" type="image/png" href="kuliah2.png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .container {
+            width: 60%;
+            margin: 100px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            text-align: left;
+            font-family: monospace;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        .copy-button {
+            display: inline-block;
+            text-decoration: none;
+            color: white;
+            background: #007BFF;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px auto;
+            width: auto;
+            text-align: center;
+            transition: background 0.3s, transform 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+        .copy-button:hover {
+            background: #0056b3;
+            transform: scale(1.1);
+        }
+        .copy-notice {
+            display: none;
+            color: green;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        .floating-message {
+            display: none;
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            font-size: 14px;
+            z-index: 1000;
+        }
+    </style>
+    <script>
+        function copyCode() {
+            const code = document.getElementById("code").textContent;
+            navigator.clipboard.writeText(code).then(() => {
+                const message = document.getElementById("floating-message");
+                message.style.display = "block";
+                setTimeout(() => {
+                    message.style.display = "none";
+                }, 2000);
+            });
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Starting Checkpoint Generator</h1>
+        <pre id="code">
+#include &lt;stdio.h&gt;  // For standard input/output functions
+#include &lt;stdlib.h&gt; // For rand and srand functions
+#include &lt;time.h&gt;   // For time function
+    
+#define GROUPS 17
+#define CHECKPOINTS 8
+    
+    void shuffle(int *array, int size) {
+        for (int i = size - 1; i > 0; i--) {
+            int j = rand() % (i + 1);
+            int temp = array[i];
+            array[i] = array[j];
+            array[j] = temp;
+        }
+    }
+    
+    int main() {
+        int checkpoint_assignments[GROUPS];
+        const char *passwords[CHECKPOINTS] = {
+            "badanamu",   // CP 1
+            "cowcing",    // CP 2
+            "momunkzz",   // CP 3
+            "kurapenyu",  // CP 4
+            "powpowpay",  // CP 5
+            "kebaboom",   // CP 6
+            "puasataktu", // CP 7
+            "bapple"      // CP 8
+        };
+    
+        const char *hints[CHECKPOINTS] = {
+            "MP2 - Tempat Belajar",     // Hint for badanamu
+            "2 4 4 3 4, tahun-90an",    // Hint for cowcing
+            "Geng plastik hitam",   // Hint for momunkzz
+            "Pondok berdekatan parking dekan",  // Hint for kurapenyu
+            "Pondok pentadbiran asasi",     // Hint for powpowpay
+            "Pondok anak kembar triplet",   // Hint for kebaboom
+            "Pondok berhampiran tasik",     // Hint for puasataktu
+            "Kawasan berhampiran parking berbumbung"    // Hint for bapple
+        };
+    
+        int cpDistribution[GROUPS];
+        int numbering = 0;
+    
+        for (int cp = 1; cp <= CHECKPOINTS; cp++) {
+            cpDistribution[numbering++] = cp;
+            cpDistribution[numbering++] = cp;
+        }
+    
+        cpDistribution[numbering++] = (rand() % CHECKPOINTS) + 1;
+    
+        srand(time(NULL));
+        shuffle(cpDistribution, GROUPS);
+    
+        printf("\nGroup Assignments:\n\n");
+        for (int i = 0; i < GROUPS; i++) {
+            int cp = cpDistribution[i];
+            printf("Group %2d -> Checkpoint %d | Password: %-10s | Hint: %s\n\n",
+                   i + 1, cp, passwords[cp - 1], hints[cp - 1]);
+        }
+    
+        return 0;
+    }
+    
+        </pre>
+        <div id="floating-message" class="floating-message">Code copied to clipboard!</div>
+        <button class="copy-button" onclick="copyCode()">Copy Code</button>
+        <p id="copy-notice" class="copy-notice">Code copied to clipboard!</p>
+        <button class="copy-button" onclick="window.location.href='faciAccess.html'">Go Back</button>
+    </div>
+</body>
+</html>

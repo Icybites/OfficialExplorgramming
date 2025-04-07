@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mark Entry Form</title>
+    <link rel="icon" type="image/png" href="kuliah2.png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #e3f2fd, #bbdefb); /* Light blue gradient */
+        }
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            background: linear-gradient(to right, #f5f5f5, #eaeaea); /* White to light grey gradient */
+            padding: 10px 20px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease-in-out;
+        }
+        .navbar:hover {
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+        .navbar img {
+            height: 50px;
+            margin-right: 20px;
+            transition: transform 0.3s ease-in-out;
+        }
+        .navbar img:hover {
+            transform: scale(1.1) rotate(5deg);
+        }
+        .navbar div {
+            display: flex;
+            gap: 15px;
+        }
+        .navbar a {
+            color: #555; /* Dark grey */
+            text-decoration: none;
+            padding: 10px 20px;
+            font-weight: bold;
+            font-size: 1rem;
+            border-radius: 5px;
+            transition: background 0.3s, transform 0.3s;
+        }
+        .navbar a:hover {
+            background: rgba(85, 85, 85, 0.1); /* Light grey hover effect */
+            transform: scale(1.1);
+        }
+        .navbar a.active {
+            background: rgba(85, 85, 85, 0.2); /* Active link background */
+        }
+        .container {
+            width: 80%;
+            margin: 100px auto;
+            background: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            animation: slideUp 0.8s ease-out;
+        }
+        @keyframes slideUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        .table-container {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .table-container.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        h2 {
+            color: #333;
+            text-align: center;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Subtle text shadow */
+        }
+        .section {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            background-color: white; /* White table background */
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background: linear-gradient(to right, #1976d2, #42a5f5); /* Blue gradient */
+            color: white;
+        }
+        tbody tr:hover {
+            background-color: #f1f1f1; /* Light grey hover effect for rows */
+        }
+        input[type="text"], input[type="number"] {
+            width: 90%;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9; /* Light grey input background */
+        }
+        button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow */
+            transition: transform 0.3s ease-in-out;
+        }
+        button:hover {
+            background-color: #218838;
+            transform: scale(1.05); /* Slight zoom effect */
+        }
+        .summary-table {
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <img src="kuliah2.png" alt="Logo" class="logo">
+        <div>
+            <a href="index.html">Home</a>
+            <a href="faciAccess.html">Checkpoint</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+    <div class="container">
+        <h2>Mark Entry Form</h2>
+        <div id="checkpoints"></div>
+        <h2 class="summary-table">Automatic Calculation</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Group</th>
+                    <th>Total Time Taken</th>
+                    <th>Total Correct Answers</th>
+                    <th>Total Wrong Answers</th>
+                </tr>
+            </thead>
+            <tbody id="summaryTable"></tbody>
+        </table>
+        <button onclick="location.href='leaderboard.html'" style="margin-top: 20px;">Go to Leaderboard</button>
+    </div>
+    <script>
+        const groups = 8;
+        const checkpoints = 8;
+
+        // Prompt user for account identifier with a formal message
+        const accountKey = prompt(
+            "🌟 Welcome to the Mark Entry System! 🌟\n\nTo access your personalized data, please enter your unique account identifier below.\n\n(If you're new, feel free to use 'defaultAccount' to get started!)",
+            "defaultAccount"
+        ) || "defaultAccount";
+
+        // Use account-specific key for localStorage
+        const storageKey = `checkpointData_${accountKey}`;
+        let checkpointData = JSON.parse(localStorage.getItem(storageKey)) || {};
+
+        function observeTables() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.table-container').forEach(table => {
+                observer.observe(table);
+            });
+        }
+
+        function createSections() {
+            const container = document.getElementById('checkpoints');
+            for (let cp = 1; cp <= checkpoints; cp++) {
+                const section = document.createElement('div');
+                section.className = 'section';
+                section.innerHTML = `<h3>Checkpoint ${cp}</h3>`;
+                let tableHTML = `<div class="table-container"><table>
+                    <thead>
+                        <tr>
+                            <th>Group</th>
+                            <th>Time Taken (mm:ss)</th>
+                            <th>Correct Answers</th>
+                            <th>Wrong Answers</th>
+                        </tr>
+                    </thead>
+                    <tbody>`;
+                for (let g = 1; g <= groups; g++) {
+                    const groupData = checkpointData[cp]?.[g] || { time: "", correct: 0, wrong: 0 };
+                    tableHTML += `<tr>
+                        <td>${g}</td>
+                        <td><input type='text' id='time-${cp}-${g}' placeholder='mm:ss' value='${groupData.time}'></td>
+                        <td><input type='number' id='correct-${cp}-${g}' value='${groupData.correct}'></td>
+                        <td><input type='number' id='wrong-${cp}-${g}' value='${groupData.wrong}'></td>
+                    </tr>`;
+                }
+                tableHTML += `</tbody></table></div>
+                    <button onclick='saveData(${cp})'>Save Checkpoint ${cp} Data</button>`;
+                section.innerHTML += tableHTML;
+                container.appendChild(section);
+            }
+            observeTables();
+        }
+
+        function saveData(cp) {
+            if (!checkpointData[cp]) checkpointData[cp] = {};
+            for (let g = 1; g <= groups; g++) {
+                const time = document.getElementById(`time-${cp}-${g}`).value;
+                const correct = parseInt(document.getElementById(`correct-${cp}-${g}`).value) || 0;
+                const wrong = parseInt(document.getElementById(`wrong-${cp}-${g}`).value) || 0;
+                checkpointData[cp][g] = { time, correct, wrong };
+            }
+            localStorage.setItem(storageKey, JSON.stringify(checkpointData));
+            calculateSummary();
+        }
+
+        function calculateSummary() {
+            const summaryTable = document.getElementById("summaryTable");
+            summaryTable.innerHTML = "";
+            for (let g = 1; g <= groups; g++) {
+                let totalTime = 0, totalCorrect = 0, totalWrong = 0;
+                for (let cp = 1; cp <= checkpoints; cp++) {
+                    if (checkpointData[cp]?.[g]) {
+                        const time = checkpointData[cp][g].time;
+                        if (time) {
+                            const [minutes, seconds] = time.split(":").map(Number);
+                            totalTime += minutes * 60 + seconds;
+                        }
+                        totalCorrect += checkpointData[cp][g].correct;
+                        totalWrong += checkpointData[cp][g].wrong;
+                    }
+                }
+                const formattedTime = `${Math.floor(totalTime / 60)}:${String(totalTime % 60).padStart(2, "0")}`;
+                summaryTable.innerHTML += `<tr>
+                    <td>${g}</td>
+                    <td>${formattedTime}</td>
+                    <td>${totalCorrect}</td>
+                    <td>${totalWrong}</td>
+                </tr>`;
+            }
+        }
+
+        createSections();
+        calculateSummary();
+    </script>
+</body>
+</html>

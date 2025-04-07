@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaderboard</title>
+    <link rel="icon" type="image/png" href="kuliah2.png">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap'); /* Updated font */
+        
+        body {
+            font-family: 'Roboto', sans-serif; /* Updated font */
+            text-align: center;
+            background: linear-gradient(to bottom, #f0f8ff, #e6e6fa); /* Light blue to lavender gradient */
+            color: #333; /* Darker text */
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            background: linear-gradient(to right, #f5f5f5, #eaeaea); /* White to light grey gradient */
+            padding: 10px 20px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease-in-out;
+        }
+        .navbar:hover {
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+        .navbar img {
+            height: 50px;
+            margin-right: 20px;
+            transition: transform 0.3s ease-in-out;
+        }
+        .navbar img:hover {
+            transform: scale(1.1) rotate(5deg);
+        }
+        .navbar div {
+            display: flex;
+            gap: 15px;
+        }
+        .navbar a {
+            color: #555; /* Dark grey */
+            text-decoration: none;
+            padding: 10px 20px;
+            font-weight: bold;
+            font-size: 1rem;
+            border-radius: 5px;
+            transition: background 0.3s, transform 0.3s;
+        }
+        .navbar a:hover {
+            background: rgba(85, 85, 85, 0.1); /* Light grey hover effect */
+            transform: scale(1.1);
+        }
+        .navbar a.active {
+            background: rgba(85, 85, 85, 0.2); /* Active link background */
+        }
+        .container {
+            width: 80%;
+            margin: 120px auto; /* Adjusted margin for fixed navbar */
+            background: #ffffff; /* White container background */
+            color: #333; /* Darker text */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        h1 {
+            color: #4a90e2; /* Blue text */
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+            background: #f9f9f9; /* Light grey table background */
+            color: #333; /* Darker text */
+            border-radius: 10px;
+            overflow: hidden;
+            animation: fadeIn 1s ease-in-out; /* Fade-in animation for table */
+        }
+        th, td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+        th {
+            background: #4a90e2; /* Blue header */
+            color: #fff; /* White text */
+            text-transform: uppercase;
+        }
+        td {
+            background: #ffffff; /* White cell background */
+            transition: background 0.3s ease-in-out;
+        }
+        td:hover {
+            background: #f0f8ff; /* Light blue hover effect */
+        }
+        tr {
+            transition: transform 0.3s ease-in-out, background 0.3s ease-in-out; /* Smooth transition for hover and transform */
+        }
+        tr:hover {
+            transform: scale(1.02); /* Slight zoom effect on hover */
+            background: #e6f7ff; /* Light blue background on hover */
+        }
+        .highlight {
+            background: #ffeb3b; /* Yellow background for top-ranked row */
+            animation: pulse 1.5s infinite; /* Pulsing effect for highlight */
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes pulse {
+            0%, 100% {
+                background-color: #ffeb3b;
+            }
+            50% {
+                background-color: #fff176; /* Slightly lighter yellow */
+            }
+        }
+        button {
+            display: inline-block;
+            margin: 20px 10px; /* Adjusted margin for spacing between buttons */
+            padding: 12px 25px; /* Slightly larger padding */
+            background: linear-gradient(to right, #4a90e2, #357ab8); /* Gradient background */
+            color: #fff; /* White text */
+            font-size: 1rem;
+            font-weight: bold; /* Bold text */
+            border: none;
+            border-radius: 25px; /* Rounded button */
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+        }
+        button:hover {
+            background: linear-gradient(to right, #357ab8, #2b6ca3); /* Darker gradient on hover */
+            transform: scale(1.05); /* Slight zoom effect */
+        }
+        button:active {
+            transform: scale(0.95); /* Pressed effect */
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <img src="kuliah2.png" alt="Logo" class="logo">
+        <div>
+            <a href="index.html">Home</a>
+            <a href="leaderboard.html" class="active">Leaderboard</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+    <div class="container">
+        <h1>Leaderboard</h1>
+        <table id="leaderboardTable">
+            <thead>
+                <tr>
+                    <th>Rank</th>
+                    <th>Team</th>
+                    <th>Total Correct Answers</th>
+                    <th>Total Wrong Answers</th>
+                    <th>Total Time Taken</th>
+                </tr>
+            </thead>
+            <tbody id="leaderboardBody"></tbody>
+        </table>
+        <button onclick="location.href='index.html'">Back</button>
+        <button id="muteButton">Mute</button>
+    </div>
+
+    <script>
+        document.querySelector('.navbar').style.display = 'flex'; // Ensure navbar is visible
+        const groups = 8;
+        const checkpoints = 8;
+
+        // Prompt user for account identifier with a formal message
+        const accountKey = prompt(
+            "🏆 Welcome to the Leaderboard! 🏆\n\nTo view your team's performance, please enter your unique account identifier below.\n\n(If you're unsure, use 'defaultAccount' to explore the leaderboard!)",
+            "defaultAccount"
+        ) || "defaultAccount";
+
+        // Use account-specific key for localStorage
+        const storageKey = `checkpointData_${accountKey}`;
+        const checkpointData = JSON.parse(localStorage.getItem(storageKey)) || {};
+
+        function loadLeaderboard() {
+            const leaderboardBody = document.getElementById("leaderboardBody");
+            leaderboardBody.innerHTML = "";
+
+            const scores = [];
+            for (let g = 1; g <= groups; g++) {
+                let totalCorrect = 0;
+                let totalWrong = 0;
+                let totalTime = 0;
+
+                for (let cp = 1; cp <= checkpoints; cp++) {
+                    if (checkpointData[cp] && checkpointData[cp][g]) {
+                        const time = checkpointData[cp][g].time;
+                        if (time) {
+                            const [minutes, seconds] = time.split(":").map(Number);
+                            totalTime += minutes * 60 + seconds;
+                        }
+                        totalCorrect += checkpointData[cp][g].correct || 0;
+                        totalWrong += checkpointData[cp][g].wrong || 0;
+                    }
+                }
+
+                scores.push({
+                    team: `Team ${g}`,
+                    correct: totalCorrect,
+                    wrong: totalWrong,
+                    time: totalTime,
+                });
+            }
+
+            scores.sort((a, b) => {
+                if (b.correct === a.correct) {
+                    return a.time - b.time;
+                }
+                return b.correct - a.correct;
+            });
+
+            scores.forEach((entry, index) => {
+                const formattedTime = `${Math.floor(entry.time / 60)}:${String(entry.time % 60).padStart(2, "0")}`;
+                const row = `<tr class="${index === 0 ? 'highlight' : ''}">
+                    <td>${index + 1}</td>
+                    <td>${entry.team}</td>
+                    <td>${entry.correct}</td>
+                    <td>${entry.wrong}</td>
+                    <td>${formattedTime}</td>
+                </tr>`;
+                leaderboardBody.innerHTML += row;
+            });
+        }
+
+        window.onload = () => {
+            const audio = new Audio("eldenring.mp3");
+            audio.autoplay = true; // Enable autoplay
+            audio.loop = true; // Loop the audio
+            audio.play().catch(() => {
+                document.body.addEventListener('click', () => {
+                    audio.play();
+                }, { once: true });
+            });
+
+            const muteButton = document.getElementById("muteButton");
+            muteButton.addEventListener("click", () => {
+                if (audio.muted) {
+                    audio.muted = false;
+                    muteButton.textContent = "Mute";
+                } else {
+                    audio.muted = true;
+                    muteButton.textContent = "Unmute";
+                }
+            });
+
+            loadLeaderboard();
+        };
+    </script>
+</body>
+</html>

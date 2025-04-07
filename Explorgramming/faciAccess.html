@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explorgramming Checkpoints</title>
+    <link rel="icon" type="image/png" href="kuliah2.png">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #e0eafc, #cfdef3), url('pattern.png');
+            background-size: cover, auto;
+            background-attachment: fixed;
+            color: #333;
+            opacity: 0;
+            animation: fadeIn 1s ease-in-out forwards;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            background: linear-gradient(to right, #f5f5f5, #eaeaea);
+            padding: 10px 20px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease-in-out;
+        }
+        .navbar:hover {
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+        .navbar img {
+            height: 50px;
+            margin-right: 20px;
+            transition: transform 0.3s ease-in-out;
+        }
+        .navbar img:hover {
+            transform: scale(1.1) rotate(5deg);
+        }
+        .navbar div {
+            display: flex;
+            gap: 15px;
+        }
+        .navbar a {
+            color: #555;
+            text-decoration: none;
+            padding: 10px 20px;
+            font-weight: bold;
+            font-size: 1rem;
+            border-radius: 5px;
+            transition: background 0.3s, transform 0.3s;
+        }
+        .navbar a:hover {
+            background: rgba(85, 85, 85, 0.1);
+            transform: scale(1.1);
+        }
+        .navbar a.active {
+            background: rgba(85, 85, 85, 0.2);
+        }
+        .container {
+            max-width: 900px;
+            margin: 100px auto 40px;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h1 {
+            color: #222;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+        .link-button {
+            display: inline-block;
+            text-decoration: none;
+            color: white;
+            background: linear-gradient(90deg, #007BFF, #0056b3);
+            padding: 10px 25px; /* Increased vertical padding */
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 400px; /* Set a fixed width for uniform button length */
+            max-width: 400px;
+            text-align: center;
+        }
+        .link-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <img src="kuliah2.png" alt="Logo" class="logo">
+        <div>
+            <a href="index.html">Home</a>
+            <a href="faciAccess.html">Checkpoints</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+    <div class="container">
+        <h1>Explorgramming Checkpoints</h1>
+        <ul>
+            <li><a class="link-button" href="keyin.html">Leaderboard Marking</a></li>
+            <li><a class="link-button" href="generator.html">Starting Checkpoint Generator</a></li>
+            <li><a class="link-button" href="checkpoint1.html">Checkpoint 1</a></li>
+            <li><a class="link-button" href="checkpoint2.html">Checkpoint 2</a></li>
+            <li><a class="link-button" href="checkpoint3.html">Checkpoint 3</a></li>
+            <li><a class="link-button" href="checkpoint4.html">Checkpoint 4</a></li>
+            <li><a class="link-button" href="checkpoint5.html">Checkpoint 5</a></li>
+            <li><a class="link-button" href="checkpoint6.html">Checkpoint 6</a></li>
+            <li><a class="link-button" href="checkpoint7.html">Checkpoint 7</a></li>
+            <li><a class="link-button" href="checkpoint8.html">Checkpoint 8</a></li>
+        </ul>
+    </div>
+</body>
+</html>
