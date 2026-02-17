@@ -1048,7 +1048,7 @@ body {
 
     /* GALLERY - KEEP 2x3 ON MOBILE */
     .gallery-item {
-        flex: 0 0 calc(50% - 1rem);
+        flex: 0 0 calc(100%);
     }
 
     .gallery-container {
@@ -1145,3 +1145,4 @@ body {
     }
 
 }
+
