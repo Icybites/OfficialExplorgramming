@@ -18,32 +18,32 @@ const galleryData = {
 
     ],
     2026: [
-        { src: "placeholder.jpg", alt: "Event 2026", title: "Coming Soon", desc: "Coming Soon" },
-        { src: "placeholder.jpg", alt: "Event 2026", title: "Coming Soon", desc: "Coming Soon" },
-        { src: "placeholder.jpg", alt: "Event 2026", title: "Coming Soon", desc: "Coming Soon" },
-        { src: "placeholder.jpg", alt: "Event 2026", title: "Coming Soon", desc: "Coming Soon" },
-        { src: "placeholder.jpg", alt: "Event 2026", title: "Coming Soon", desc: "Coming Soon" },
-        { src: "placeholder.jpg", alt: "Event 2026", title: "Coming Soon", desc: "Coming Soon" },
-        { src: "placeholder.jpg", alt: "Event 2026", title: "Coming Soon", desc: "Coming Soon" },
-        { src: "placeholder.jpg", alt: "Event 2026", title: "Coming Soon", desc: "Coming Soon" },
-        { src: "placeholder.jpg", alt: "Event 2026", title: "Coming Soon", desc: "Coming Soon" },
-        { src: "placeholder.jpg", alt: "Event 2026", title: "Coming Soon", desc: "Coming Soon" },
-        { src: "placeholder.jpg", alt: "Event 2026", title: "Coming Soon", desc: "Coming Soon" },
-        { src: "placeholder.jpg", alt: "Event 2026", title: "Coming Soon", desc: "Coming Soon" }
+        { src: "images/soon2026.png", alt: "Event 2026", title: "Coming Soon", desc: "Coming Soon" },
+        { src: "images/soon2026.png", alt: "Event 2026", title: "Coming Soon", desc: "Coming Soon" },
+        { src: "images/soon2026.png", alt: "Event 2026", title: "Coming Soon", desc: "Coming Soon" },
+        { src: "images/soon2026.png", alt: "Event 2026", title: "Coming Soon", desc: "Coming Soon" },
+        { src: "images/soon2026.png", alt: "Event 2026", title: "Coming Soon", desc: "Coming Soon" },
+        { src: "images/soon2026.png", alt: "Event 2026", title: "Coming Soon", desc: "Coming Soon" },
+        { src: "images/soon2026.png", alt: "Event 2026", title: "Coming Soon", desc: "Coming Soon" },
+        { src: "images/soon2026.png", alt: "Event 2026", title: "Coming Soon", desc: "Coming Soon" },
+        { src: "images/soon2026.png", alt: "Event 2026", title: "Coming Soon", desc: "Coming Soon" },
+        { src: "images/soon2026.png", alt: "Event 2026", title: "Coming Soon", desc: "Coming Soon" },
+        { src: "images/soon2026.png", alt: "Event 2026", title: "Coming Soon", desc: "Coming Soon" },
+        { src: "images/soon2026.png", alt: "Event 2026", title: "Coming Soon", desc: "Coming Soon" }
     ],
     2027: [
-        { src: "placeholder.jpg", alt: "Event 2027", title: "Coming Soon", desc: "Coming Soon" },
-        { src: "placeholder.jpg", alt: "Event 2027", title: "Coming Soon", desc: "Coming Soon" },
-        { src: "placeholder.jpg", alt: "Event 2027", title: "Coming Soon", desc: "Coming Soon" },
-        { src: "placeholder.jpg", alt: "Event 2027", title: "Coming Soon", desc: "Coming Soon" },
-        { src: "placeholder.jpg", alt: "Event 2027", title: "Coming Soon", desc: "Coming Soon" },
-        { src: "placeholder.jpg", alt: "Event 2027", title: "Coming Soon", desc: "Coming Soon" },
-        { src: "placeholder.jpg", alt: "Event 2027", title: "Coming Soon", desc: "Coming Soon" },
-        { src: "placeholder.jpg", alt: "Event 2027", title: "Coming Soon", desc: "Coming Soon" },
-        { src: "placeholder.jpg", alt: "Event 2027", title: "Coming Soon", desc: "Coming Soon" },
-        { src: "placeholder.jpg", alt: "Event 2027", title: "Coming Soon", desc: "Coming Soon" },
-        { src: "placeholder.jpg", alt: "Event 2027", title: "Coming Soon", desc: "Coming Soon" },
-        { src: "placeholder.jpg", alt: "Event 2027", title: "Coming Soon", desc: "Coming Soon" }
+        { src: "images/soon2027.png", alt: "Event 2027", title: "Coming Soon", desc: "Coming Soon" },
+        { src: "images/soon2027.png", alt: "Event 2027", title: "Coming Soon", desc: "Coming Soon" },
+        { src: "images/soon2027.png", alt: "Event 2027", title: "Coming Soon", desc: "Coming Soon" },
+        { src: "images/soon2027.png", alt: "Event 2027", title: "Coming Soon", desc: "Coming Soon" },
+        { src: "images/soon2027.png", alt: "Event 2027", title: "Coming Soon", desc: "Coming Soon" },
+        { src: "images/soon2027.png", alt: "Event 2027", title: "Coming Soon", desc: "Coming Soon" },
+        { src: "images/soon2027.png", alt: "Event 2027", title: "Coming Soon", desc: "Coming Soon" },
+        { src: "images/soon2027.png", alt: "Event 2027", title: "Coming Soon", desc: "Coming Soon" },
+        { src: "images/soon2027.png", alt: "Event 2027", title: "Coming Soon", desc: "Coming Soon" },
+        { src: "images/soon2027.png", alt: "Event 2027", title: "Coming Soon", desc: "Coming Soon" },
+        { src: "images/soon2027.png", alt: "Event 2027", title: "Coming Soon", desc: "Coming Soon" },
+        { src: "images/soon2027.png", alt: "Event 2027", title: "Coming Soon", desc: "Coming Soon" }
     ]
 };
 
@@ -675,4 +675,5 @@ window.addEventListener('pageshow', (event) => {
     }
 
 });
+
 
