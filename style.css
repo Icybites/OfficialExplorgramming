@@ -1101,6 +1101,18 @@ body {
         padding-left: 20px;
         padding-right: 20px;
     }
+    
+    .logo {
+        font-size: 1.25rem;
+    }
+
+    .logo:hover {
+        transform: translateY(-2px);
+    }
+
+    .logo-text2 {
+        margin-left: 1px;
+    }
 
     .hero-title {
         font-size: 2.25rem;
@@ -1131,4 +1143,5 @@ body {
         padding: 0.5rem 1.25rem;
         font-size: 0.8125rem;
     }
+
 }
