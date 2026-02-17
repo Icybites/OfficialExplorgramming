@@ -1496,4 +1496,17 @@ body {
     .btn-back i {
         font-size: 0.875rem;
     }
+
+    .logo {
+        font-size: 1.25rem;
+    }
+
+    .logo:hover {
+        transform: translateY(-2px);
+    }
+
+    .logo-text2 {
+        margin-left: 1px;
+    }
 }
+
