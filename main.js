@@ -348,8 +348,10 @@ function initGallerySlider() {
 
     // Update items per view based on screen size, this is basically the brain
     function updateItemsPerView() {
-        if (window.innerWidth <= 768) {
-            state.itemsPerView = 2; // Mobile: 2 per row (so 6 total with 3 rows visible)
+        if (window.innerWidth <= 480) {
+            state.itemsPerView = 1; // Mobile: 2 per row (so 6 total with 3 rows visible)
+        } else if (window.innerWidth <= 768) {
+            state.itemsPerView = 1;
         } else if (window.innerWidth <= 992){
             state.itemsPerView = 2;
         } else if (window.innerWidth <= 1200){
@@ -673,3 +675,4 @@ window.addEventListener('pageshow', (event) => {
     }
 
 });
+
