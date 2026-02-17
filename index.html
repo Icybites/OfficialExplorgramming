@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>Explorgramming</title>
+    <link rel="stylesheet" href="/LandingPage/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    
+    <!-- ========================== -->
+    <!-- ===== NAVIGATION BAR ===== -->
+    <!-- ========================== -->
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="#home" class="logo">
+                    <span class="logo-text1">Explor</span>
+                    <span class="logo-text2">gramming</span>
+                </a>
+            </div>
+
+        <!-- ===== Dekstop Navigation ===== -->
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link" data-section="home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#objective" class="nav-link" data-section="objective">Objective</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#learn" class="nav-link" data-section="learn">Learn</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#gallery" class="nav-link" data-section="gallery">Gallery</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link" data-section="contact">Contact</a>
+                </li>
+            </ul>
+
+        <!-- ===== Mobile Menu Button ===== -->
+            <button class="hamburger" aria-label="Toggle menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ========================== -->
+    <!-- ====== MAIN SECTION ====== -->
+    <!-- ========================== -->
+
+    <main>
+        <!-- HOME SECTION -->
+        <section id="home" class="section hero-section">
+            <div class="container">
+                <div class="hero">
+                    <h1 class="hero-title">Explore Code. 
+                        <span class="gradient-title">Conquer.</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        Learn C programming beyond the classroom.<br>
+                        Explore designated checkpoints, complete coding quizzes, and progress as a team.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#learn" class="btn btn-primary">
+                            <i class="fas fa-flag-checkered"></i>
+                            Start Exploring
+                        </a>
+                        <a href="#contact" class="btn btn-outline">
+                            <i class="fas fa-info-circle"></i>
+                            Learn More
+                        </a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">Upcoming Event</span>
+                            <span class="stat-label">2 April 2026</span>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-item">
+                            <span class="stat-number">Registration</span>
+                            <span class="stat-label">Open Now</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- OBJECTIVE SECTION -->
+        <section id="objective" class="section bg-light"> <!-- background light, to separate from other section. Also often used for secondary content -->
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Objective</span>
+                    <h2 class="section-title">Why Explogramming?</h2>
+                    <p class="section-subtitle">Building excitement and motivation in early programming education</p>
+                </div>
+                <div class="grid-1">
+                    <div class="card">
+                        <div class="card-icon">
+                            <i class="fas fa-compass"></i>
+                        </div>
+                        <h3>Explore</h3>
+                        <p>Navigate through 6 unique checkpoints via QR codes. Each location presents different challenges.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3>Code</h3>
+                        <p>Test your programming knowledge with MCQs and short-answer questions. 
+                            Compete and complete the challenge in the shortest possible time.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <h3>Code</h3>
+                        <p>Accumulate points, trask progress, and claim victory on the final stage.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- LEARN SECTION -->
+        <section id="learn" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Learn + Play</span>
+                    <h2 class="section-title">Start Your Quest</h2>
+                    <p class="section-subtitle">Not ready for the real deal? Refresh yourself with some exercises below!</p>
+                </div>
+
+                <!-- BY CHAPTER GRID -->
+                <div class="chapter-grid">
+                    <!-- BREAKER 1 -->
+                    <div class="chapter-card">
+                        <div class="chapter-header">
+                            <span class="chapter-number">01</span>
+                            <span class="chapter-difficulty easy">Easy</span>
+                        </div>
+                        <h4>Introduction to C</h4>
+                        <p>Understand the basics of C, from structure to simple programs</p>
+                        <div class="chapter-footer">
+                            <span class="chapter-status">10 questions</span>
+                            <a href="/exercises/CH1/index.html" class="btn-link">
+                                Start <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- BREAKER 2 -->
+                    <div class="chapter-card">
+                        <div class="chapter-header">
+                            <span class="chapter-number">02</span>
+                            <span class="chapter-difficulty easy">Easy</span>
+                        </div>
+                        <h4>Fundamental of C</h4>
+                        <p>Data types, operators, and its usage</p>
+                        <div class="chapter-footer">
+                            <span class="chapter-status">10 questions</span>
+                            <a href="" class="btn-link">
+                                Start <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- BREAKER 3 -->
+                    <div class="chapter-card">
+                        <div class="chapter-header">
+                            <span class="chapter-number">03</span>
+                            <span class="chapter-difficulty medium">Medium</span>
+                        </div>
+                        <h4>Control Structure</h4>
+                        <p>Controlling program flow with conditions and loops</p>
+                        <div class="chapter-footer">
+                            <span class="chapter-status">10 questions</span>
+                            <a href="" class="btn-link">
+                                Start <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- BREAKER 4 -->
+                    <div class="chapter-card">
+                        <div class="chapter-header">
+                            <span class="chapter-number">04</span>
+                            <span class="chapter-difficulty medium">Medium</span>
+                        </div>
+                        <h4>Modularity using Function</h4>
+                        <p>Modular code using functions, return values, and parameters</p>
+                        <div class="chapter-footer">
+                            <span class="chapter-status">10 questions</span>
+                            <a href="" class="btn-link">
+                                Start <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- BREAKER 5 -->
+                    <div class="chapter-card">
+                        <div class="chapter-header">
+                            <span class="chapter-number">05</span>
+                            <span class="chapter-difficulty hard">Hard</span>
+                        </div>
+                        <h4>Array</h4>
+                        <p>One-dimensional and multi-dimensional arrays in C</p>
+                        <div class="chapter-footer">
+                            <span class="chapter-status">10 questions</span>
+                            <a href="" class="btn-link">
+                                Start <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- BREAKER 6 -->
+                    <div class="chapter-card">
+                        <div class="chapter-header">
+                            <span class="chapter-number">06</span>
+                            <span class="chapter-difficulty expert">Expert</span>
+                        </div>
+                        <h4>Unknown</h4>
+                        <p>Will update soon</p>
+                        <div class="chapter-footer">
+                            <span class="chapter-status">0 questions</span>
+                            <a href="" class="btn-link">
+                                Start <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- GALLERY SECTION -->
+        <section id="gallery" class="section bg-light">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Gallery</span>
+                    <h4 class="section-title">Our Past Events</h4>
+                    <p class="section-subtitle">Moments captured from our previous events</p>
+                </div>
+
+                <!-- Year Filter -->
+                <div class="gallery-year-filter">
+                    <button class="year-tab active" data-year="2025">2025</button>
+                    <button class="year-tab" data-year="2026">2026</button>
+                    <button class="year-tab" data-year="2027">2027</button>
+                </div>
+
+                <div class="gallery-container">
+                    
+                    <button class="gallery-nav gallery-nav-left" id="galleryPrev" aria-label="Previous">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+
+                    <div class="gallery-slider">
+                        <div class="gallery-track" id="galleryTrack">
+                            <!-- Gallery items will be dynamically generated by JavaScript -->
+                        </div>
+                    </div>
+
+                    <!-- Right slider button -->
+                    <button class="gallery-nav gallery-nav-right" id="galleryNext" aria-label="Next">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+
+                <div class="gallery-dots" id="galleryDots"></div>
+            </div>
+        </section>
+
+        <!-- Gallery Lightbox -->
+        <div class="gallery-lightbox" id="galleryLightbox">
+            <button class="lightbox-close" aria-label="Close">&times;</button>
+            <img src="" alt="" id="lightboxImage">
+        </div>
+
+        <!-- CONTACT SECTION -->
+         <section id="contact" class="section contact-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Contact</span>
+                    <h2 class="section-title">Get In Touch</h2>
+                    <p class="section-subtitle">Ready to start your explorgramming journey?</p>
+                </div>
+
+                <div class="contact-content">
+                    <div class="footer-brand">
+                        <a href="#home" class="footer-logo">
+                            <span>Explorgramming</span>
+                        </a>
+                        <p class="footer-description">
+                            A live event prototype combining physical exploration with programming quizzes.
+                            Frontend-only (for now), mobile-friendly, ready for deployment.
+                        </p>
+                        <div class="social-links">
+                            <a href="#" class="social-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                            <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="footer-links">
+                        <div class="footer-column">
+                            <h4>Explore</h4>
+                            <ul>
+                                <li><a href="#home">Home</a></li>
+                                <li><a href="#objective">Objective</a></li>
+                                <li><a href="#learn">Learn</a></li>
+                                <li><a href="#gallery">Gallery</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-column">
+                            <h4>Explore</h4>
+                            <ul>
+                                <li><a href="#">Documentation</a></li>
+                                <li><a href="#">Team Members</a></li>
+                                <li><a href="#">FAQ</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-column">
+                            <h4>Legal</h4>
+                            <ul>
+                                <li><a href="#">Privacy</a></li>
+                                <li><a href="#">Terms</a></li>
+                                <li><a href="#">Cookie Policy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2024 Explorgramming. Built for live events. No Backend, all frontend.</p>
+                </div>
+            </div>
+         </section>
+    </main>
+
+    <script src="/LandingPage/main.js"></script>
+</body>
+</html>

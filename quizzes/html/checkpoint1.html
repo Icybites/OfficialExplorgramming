@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>Checkpoint 1 - HTML Foundations | Explorgramming</title>
+    <link rel="stylesheet" href="../css/quiz1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    
+    <!-- ========================== -->
+    <!-- ===== NAVIGATION BAR ===== -->
+    <!-- ========================== -->
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="#" class="logo">
+                    <span class="logo-text1">Explor</span>
+                    <span class="logo-text2">gramming</span>
+                </a>
+            </div>
+            <a href="/index.html" class="btn-back">
+                <i class="fas fa-arrow-left"></i>
+                Back to Home
+            </a>
+        </div>
+    </nav>
+
+    <!-- Password Lock Screen -->
+    <div class="password-screen" id="passwordScreen">
+        <div class="password-container">
+            <div class="lock-icon">
+                <i class="fas fa-lock"></i>
+            </div>
+            <h1>Checkpoint 1</h1>
+            <h2>Introduction to C</h2>
+            <p class="checkpoint-info">10 Questions • Easy Difficulty</p>
+            <div class="password-form">
+                <input 
+                    type="text" 
+                    id="passwordInput" 
+                    placeholder="Enter checkpoint password"
+                    autocomplete="off"
+                >
+                <button id="unlockBtn" class="btn btn-primary">
+                    <i class="fas fa-unlock"></i>
+                    Unlock Quiz
+                </button>
+                <p class="error-message" id="errorMessage"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quiz Screen -->
+    <div class="quiz-screen" id="quizScreen">
+        <div class="quiz-container">
+            <!-- Quiz Header -->
+            <div class="quiz-header">
+                <div class="quiz-info">
+                    <h1>Checkpoint 1: Introduction to C</h1>
+                    <div class="progress-info">
+                        <span class="question-counter">
+                            Question <span id="currentQuestion">1</span> of <span id="totalQuestions">10</span>
+                        </span>
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progressFill"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="timer" id="timer">
+                    <i class="fas fa-clock"></i>
+                    <span id="timerDisplay">00:00</span>
+                </div>
+            </div>
+
+            <!-- Question Container -->
+            <div class="question-container" id="questionContainer">
+                <!-- Questions will be dynamically inserted here -->
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div class="quiz-navigation">
+                <button id="prevBtn" class="btn btn-outline" disabled>
+                    <i class="fas fa-chevron-left"></i>
+                    Previous
+                </button>
+                <button id="nextBtn" class="btn btn-primary">
+                    Next
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                <button id="submitBtn" class="btn btn-submit" style="display: none;">
+                    <i class="fas fa-check-circle"></i>
+                    Submit Quiz
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Results Screen -->
+    <div class="results-screen" id="resultsScreen">
+        <div class="results-container">
+            <div class="results-icon">
+                <i class="fas fa-trophy"></i>
+            </div>
+            <h1>Quiz Complete!</h1>
+            <div class="score-display">
+                <div class="score-circle">
+                    <span class="score-number" id="scoreNumber">0</span>
+                    <span class="score-total">/ <span id="scoreTotalDisplay">10</span></span>
+                </div>
+                <p class="score-label">Correct Answers</p>
+            </div>
+            <div class="results-stats">
+                <div class="stat-item">
+                    <i class="fas fa-clock"></i>
+                    <span class="stat-label">Time Taken</span>
+                    <span class="stat-value" id="timeTaken">00:00</span>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-percent"></i>
+                    <span class="stat-label">Score</span>
+                    <span class="stat-value" id="percentageScore">0%</span>
+                </div>
+            </div>
+            <div class="results-actions">
+                <button class="btn btn-primary" onclick="window.location.href='#'">
+                    <i class="fas fa-home"></i>
+                    Back to Home
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/quiz1.js"></script>
+</body>
+</html>
