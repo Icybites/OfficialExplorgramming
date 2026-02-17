@@ -3,18 +3,18 @@
 // ======= GALLERY DATA BY YEAR ======= //
 const galleryData = {
     2025: [
-        { src: "../images/gambar1.jpg", alt: "Event 2025", title: "Developer Team", desc: "Except for the songkok guy" },
-        { src: "../images/gambar2.jpg", alt: "Event 2025", title: "Fasilitator Team", desc: "Main crew for Explorgramming 2025" },
-        { src: "../images/gambar3.jpg", alt: "Event 2025", title: "Session 1 Closing", desc: "First Prototype" },
-        { src: "../images/gambar4.jpg", alt: "Event 2025", title: "Post Events", desc: "Roti Jala with Chicken Curry" },
-        { src: "../images/gambar5.jpg", alt: "Event 2025", title: "Participant Top View", desc: "First testing" },
-        { src: "../images/gambar6.jpg", alt: "Event 2025", title: "Winner", desc: "One of Explorgramming Winners" },
-        { src: "../images/gambar7.jpg", alt: "Event 2025", title: "Activities", desc: "Photo 1" },
-        { src: "../images/gambar9.jpg", alt: "Event 2025", title: "Activities", desc: "Photo 2" },
-        { src: "../images/gambar8.jpg", alt: "Event 2025", title: "Activities", desc: "Photo 3" },
-        { src: "../images/gambar10.jpg", alt: "Event 2025", title: "Activities", desc: "Photo 4" },
-        { src: "../images/gambar11.jpg", alt: "Event 2025", title: "Activities", desc: "Photo 5" },
-        { src: "../images/gambar12.jpg", alt: "Event 2025", title: "Activities", desc: "Photo 6" }
+        { src: "images/gambar1.jpg", alt: "Event 2025", title: "Developer Team", desc: "Except for the songkok guy" },
+        { src: "images/gambar2.jpg", alt: "Event 2025", title: "Fasilitator Team", desc: "Main crew for Explorgramming 2025" },
+        { src: "images/gambar3.jpg", alt: "Event 2025", title: "Session 1 Closing", desc: "First Prototype" },
+        { src: "images/gambar4.jpg", alt: "Event 2025", title: "Post Events", desc: "Roti Jala with Chicken Curry" },
+        { src: "images/gambar5.jpg", alt: "Event 2025", title: "Participant Top View", desc: "First testing" },
+        { src: "images/gambar6.jpg", alt: "Event 2025", title: "Winner", desc: "One of Explorgramming Winners" },
+        { src: "images/gambar7.jpg", alt: "Event 2025", title: "Activities", desc: "Photo 1" },
+        { src: "images/gambar9.jpg", alt: "Event 2025", title: "Activities", desc: "Photo 2" },
+        { src: "images/gambar8.jpg", alt: "Event 2025", title: "Activities", desc: "Photo 3" },
+        { src: "images/gambar10.jpg", alt: "Event 2025", title: "Activities", desc: "Photo 4" },
+        { src: "images/gambar11.jpg", alt: "Event 2025", title: "Activities", desc: "Photo 5" },
+        { src: "images/gambar12.jpg", alt: "Event 2025", title: "Activities", desc: "Photo 6" }
 
     ],
     2026: [
@@ -671,4 +671,5 @@ window.addEventListener('pageshow', (event) => {
             body.style.overflow = '';
         }
     }
+
 });
